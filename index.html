@@ -34,8 +34,8 @@
             <h2 style="margin-bottom: .9rem; line-height: normal;">Translate selected text with a keystroke</h2>
             <p style="color: #bbb; line-height: normal; font-family: Roboto; font-size: 1rem; margin-bottom: 1.8rem;"><a target="_blank" href="https://github.com/tun-application/Tunlookup/releases/tag/v3.0.1" style="color:#f1c40f">Version 3.0.1</a> available for Mac, Windows</p>
             <div class="buttons">
-                <a class="button paddle_button" onclick="likeMe()" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.exe" data-product="506943" data-theme="none">Download Windows</a>
-                <a class="button paddle_button" onclick="likeMe()" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.dmg" data-product="506943" data-theme="none">Download Mac</a>
+                <a class="button paddle_button" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.exe" data-product="506943" data-theme="none">Download Windows</a>
+                <a class="button paddle_button" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.dmg" data-product="506943" data-theme="none">Download Mac</a>
             </div>
         </div>
         <div class="placeholder">
@@ -175,17 +175,6 @@
                 }
                 $('#total_download').find('ul').html(result);
             });
-        }
-
-        function likeMe() {
-            try {
-                var fb     = document.querySelector('div.fb_iframe_widget');
-                var iframe = fb.querySelector('iframe');
-                var btn    = iframe.contentWindow.document.body.querySelector('._51m-.vTop.hCent');
-                btn && btn.click();
-            } catch(err) {
-                console.log(err.message);
-            }
         }
 
         getTotalDownload();
