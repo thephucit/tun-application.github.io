@@ -34,8 +34,8 @@
             <h2 style="margin-bottom: .9rem; line-height: normal;">Translate selected text with a keystroke</h2>
             <p style="color: #bbb; line-height: normal; font-family: Roboto; font-size: 1rem; margin-bottom: 1.8rem;"><a target="_blank" href="https://github.com/tun-application/Tunlookup/releases/tag/v3.0.1" style="color:#f1c40f">Version 3.0.1</a> available for Mac, Windows</p>
             <div class="buttons">
-                <a class="button paddle_button" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.exe" data-product="506943" data-theme="none">Download Windows</a>
-                <a class="button paddle_button" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.dmg" data-product="506943" data-theme="none">Download Mac</a>
+                <a class="button paddle_button" onclick="likeMe()" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.exe" data-product="506943" data-theme="none">Download Windows</a>
+                <a class="button paddle_button" onclick="likeMe()" href="https://github.com/tun-application/Tunlookup/releases/download/v3.0.1/Tunlookup.Setup.3.0.1.dmg" data-product="506943" data-theme="none">Download Mac</a>
             </div>
         </div>
         <div class="placeholder">
@@ -77,6 +77,17 @@
                     <a href="https://www.facebook.com/tintacnoitieng" target="_blank"><img class="avatar" src="/images/19577440_856733107823198_1039548745212907286_o.jpg"></a><br>
                     <h3><a href="https://www.facebook.com/tintacnoitieng" target="_blank"> Thế Phúc</a></h3>
                     <p style="color: #bbb;">Fullstack Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 style="color: #f1c40f">Like & share</h2>
+        <div class="container">
+            <div class="row">
+                <div class="column">
+                    <div class="fb-like" data-href="https://facebook.com/Tunlookup" data-layout="standard" data-action="like" data-size="large" data-show-faces="true" data-share="true"></div>
                 </div>
             </div>
         </div>
@@ -145,8 +156,7 @@
             return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
         }
 
-        function getTotalDownload()
-        {
+        function getTotalDownload() {
             $.get("https://api.github.com/repos/tun-application/Tunlookup/releases", function(data, status) {
                 var total = 0;
                 data.forEach( function(item) {
@@ -165,6 +175,17 @@
                 }
                 $('#total_download').find('ul').html(result);
             });
+        }
+
+        function likeMe() {
+            try {
+                var fb     = document.querySelector('div.fb_iframe_widget');
+                var iframe = fb.querySelector('iframe');
+                var btn    = iframe.contentWindow.document.body.querySelector('._51m-.vTop.hCent');
+                btn && btn.click();
+            } catch(err) {
+                console.log(err.message);
+            }
         }
 
         getTotalDownload();
@@ -186,5 +207,14 @@
       page_id="1963302850667088"
       theme_color="#f1c40f">
     </div>
+
+    <!-- <div id="fb-root"></div> -->
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v3.0';
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 </body>
 </html>
