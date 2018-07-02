@@ -78,6 +78,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 .copyright {
     background: #333;
     color: #fff;
@@ -88,6 +89,7 @@
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+
 .header-title {
     font-size: 2em;
     color: #f1c40f
