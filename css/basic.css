@@ -92,7 +92,8 @@
 
 .header-title {
     font-size: 2em;
-    color: #f1c40f
+    font-weight: 700;
+    /*color: #f1c40f;*/
 }
 
 kbd {
