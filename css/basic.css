@@ -2,7 +2,7 @@
 
 #total_download {
     width: 198px;
-    border: 1px solid #000;
+    //border: 1px solid #000;
     border-radius: 5px;
     padding: 15px 0;
     text-align: center;
@@ -19,6 +19,7 @@
 
 #total_download p {
     margin-bottom: 10px;
+    font-weight: 700;
 }
 
 #total_download ul li {
