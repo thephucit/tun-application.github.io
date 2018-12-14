@@ -39,12 +39,19 @@
             vertical-align: middle;
             width: 120px;
         }
+        body {
+            background: url(https://images.pexels.com/photos/65911/winter-nature-season-trees-65911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="container" style="padding: 3.6rem 0 3.6rem;">
-            <h1 style="color: #f1c40f; font-size: 5rem; font-weight: 300; line-height: normal; margin-bottom: .9rem;"><img class="logo-tunlookup" src="/images/icon.png">Tunlookup</h1>
+            <h1 style="color: #f1c40f; font-size: 5rem; font-weight: 600; line-height: normal; margin-bottom: .9rem;"><img class="logo-tunlookup" src="/images/icon.png">Tunlookup</h1>
             <h2 style="margin-bottom: .9rem; line-height: normal;">Translate selected text with a keystroke</h2>
             <p style="color: #bbb; line-height: normal; font-family: Roboto; font-size: 1rem; margin-bottom: 1.8rem;"><a target="_blank" href="https://github.com/tun-application/Tunlookup/releases/tag/v3.0.2" style="color:#f1c40f">Version 3.0.2</a> available for Mac, Windows</p>
             <div class="buttons">
@@ -56,7 +63,7 @@
             <div style="position: relative;">
                 <img class="placeholder__image" src="/images/placeholder.png">
                 <div class="screenshot">
-                    <video muted autoplay loop class="screenshot__image" src="/capture.mp4" type="video/mp4"></video>
+                    <video muted autoplay loop class="screenshot__image" src="/resource/capture.mp4" type="video/mp4"></video>
                 </div>
             </div>
         </div>
@@ -136,58 +143,9 @@
         <p>TOTAL DOWNLOADS</p>
         <ul></ul>
     </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-99339246-1', 'auto');
-        ga('send', 'pageview');
-
-        function formatNumber(num) {
-            return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,")
-        }
-
-        function getTotalDownload() {
-            $.get("https://api.github.com/repos/tun-application/Tunlookup/releases", function(data, status) {
-                var total = 0;
-                data.forEach( function(item) {
-                    item.assets.forEach( function(child) {
-                        total += child.download_count;
-                    });
-                });
-                var result = '';
-                var number = formatNumber(total);
-                for (var i = 0; i < number.length; i++) {
-                    if (number.charAt(i) == ',') {
-                        result += '<li class="command"><span>,</span></li>';
-                    } else {
-                        result += '<li>'+number.charAt(i)+'</li>';
-                    }
-                }
-                $('#total_download').find('ul').html(result);
-            });
-        }
-
-        getTotalDownload();
-
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-
-        var disqus_config = function () {
-            this.page.url = 'https://tunlookup.com/';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = 'https://tunlookup.com/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document,
-                s = d.createElement('script');
-            s.src = 'https://tunlookup.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
+    <script type='text/javascript' src='/js/common.js'></script>
+    <script type='text/javascript' src='/js/snow.js'></script>
 </body>
 </html>
