@@ -1,0 +1,22 @@
+before_script:
+  - echo $CI_RUNNER_ID
+  - echo $CI_RUNNER_DESCRIPTION
+  - echo $CI_PROJECT_DIR
+
+stages:
+  - deploy
+
+deploy-production:
+  stage: deploy
+  script:
+    - echo "Deploying to *production*"
+    - export COMPOSER_ALLOW_SUPERUSER=1
+    # - composer update
+  environment:
+    name: production
+  only:
+    - master
+  tags:
+    - deploy_vps
+  only:
+    - master
